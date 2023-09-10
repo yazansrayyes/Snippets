@@ -1,19 +1,14 @@
 # key: <header
 # name: Basic Org Header
 # --
-#+title: ${1:$$(capitalize yas-text)}
-#+author: ${2:`user-full-name`}
-#+date: ${3:`(format-time-string "%Y:%m:%d")`}
-#+options: h:${4:3} num:${5:t||nil} toc:${6:t||nil}
-${7:#+property: header-args:matlab :session *MATLAB* :results output :exports both :eval never-export :noweb yes}
-${8:#+property: header-args:julia :session *Julia* :async yes :exports results}
-# #+setupfile: https://fniessen.github.io/org-html-themes/setup/theme-readtheorg.setup
-# #+html_HEAD: <link rel="stylesheet" type="text/css" href="https://gongzhitaao.org/orgcss/org.css"/>
-#+latex_CLASS: ${9:article}
-#+latex_CLASS_OPTIONS: ${10:[10pt]}
-#+latex_HEADER: ${11:\input{${12:`(if (boundp 'my-preamble-file) my-preamble-file "")`}}}
-${13:#+bibliography: ${14:`(car reftex-default-bibliography)`}}
-#+exclude_TAGS: noexport ignore
-#+startup: ${15:latexpreview} ${16:hideblocks}
+#+TITLE: ${1:$$(capitalize yas-text)}
+#+SUBTITLE: ${2:$$(capitalize yas-text)}
+#+AUTHOR: `user-full-name`
+#+DATE: `(format-time-string "%Y:%m:%d")`
+#+OPTIONS: toc:nil num:nil
+#+STARTUP: showall
+#+LATEX_HEADER: \let\oldsection\section
+#+LATEX_HEADER: \renewcommand{\section}{\clearpage\oldsection}
+
 
 $0
